@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Wanderly</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/images/logo.png">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="sidebar">
+      <img src="/images/logo-white.svg" alt="Wanderly">
+      <nav id="sideNav">
+        <button class="nav-btn" data-route="overview">Overview</button>
+        <button class="nav-btn" data-route="destinations">Destinations</button>
+        <button class="nav-btn" data-route="testimonials">Testimonials</button>
+        <button class="nav-btn" data-route="contact">Contact messages <span class="count" id="countContact" hidden>0</span></button>
+        <button class="nav-btn" data-route="trips">Trip requests <span class="count" id="countTrips" hidden>0</span></button>
+        <button class="nav-btn" data-route="newsletter">Newsletter</button>
+      </nav>
+      <div class="sidebar-foot">
+        <div class="who" id="whoAmI">—</div>
+        <button class="btn btn-ghost btn-sm" id="logoutBtn" style="width:100%;">Log out</button>
+      </div>
+    </aside>
+
+    <main class="main" id="main">
+      <!-- rendered by admin.js -->
+    </main>
+  </div>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-card" id="modalCard"></div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="/admin/js/admin.js"></script>
+</body>
+</html>

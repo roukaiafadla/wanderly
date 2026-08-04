@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wanderly — Explore the World Your Way</title>
+<meta name="description" content="Unique destinations, tailor-made journeys, one unforgettable trip. Plan your next adventure with Wanderly.">
+<link rel="icon" type="image/svg+xml" href="/images/logo.svg">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- =========================================================
+  IMAGE GUIDE — sizes to use when you swap in your own photos
+  Hero background (full-bleed) : /images/hero-boat.jpg        1920x1080px  (landscape, boat + wake, JPG/WebP)
+  Contact section bg      : /images/contact-bg.jpg        1800x1200px (beach/aerial wave shot)
+  Final CTA bg             : /images/cta-bg.jpg            1920x1080px (mountains / hiker silhouette)
+  Destination card photos : /images/destinations/*.jpg    900x675px   (4:3, one per destination — see server/seed.js for slugs)
+  Testimonial avatars     : /images/testimonials/*.jpg    160x160px   (square, will be cropped to a circle)
+  All images should be optimized JPG or WebP, ideally under 300KB each.
+========================================================== -->
+
+<header class="site-header" id="siteHeader">
+  <div class="container">
+    <a href="/" class="brand" aria-label="Wanderly home">
+      <img src="/images/logo-white.svg" alt="" width="30" height="30">
+      <span class="brand-word">Wanderly</span>
+    </a>
+
+    <nav class="nav-main" aria-label="Primary">
+      <a href="#destinations">Destinations</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="btn btn-gold" data-open-modal>Plan My Trip</button>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-top">
+    <a href="/" class="brand"><img src="/images/logo-white.svg" alt="" width="28" height="28"><span class="brand-word">Wanderly</span></a>
+    <button type="button" id="navClose" aria-label="Close menu" style="background:none;border:1px solid rgba(255,255,255,.3);width:40px;height:40px;border-radius:10px;color:#fff;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <a href="#destinations" data-nav-link>Destinations</a>
+  <a href="#why-us" data-nav-link>Why Us</a>
+  <a href="#reviews" data-nav-link>Reviews</a>
+  <a href="#contact" data-nav-link>Contact</a>
+  <button type="button" class="btn btn-gold btn-block" data-open-modal>Plan My Trip</button>
+</div>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Tailor-made travel</p>
+        <h1>Explore the <em>World</em> Your Way</h1>
+        <p>Unique destinations. Tailor-made journeys. One unforgettable trip, planned around exactly how you like to travel.</p>
+        <div class="hero-actions">
+          <a href="#destinations" class="btn btn-outline-light">Browse Trips</a>
+          <button type="button" class="btn btn-gold" data-open-modal>
+            Start Planning
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+        <div class="hero-stats">
+          <div><strong>12k+</strong><span>Travelers</span></div>
+          <div><strong>60+</strong><span>Destinations</span></div>
+          <div><strong>4.9/5</strong><span>Avg. rating</span></div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- ============ DESTINATIONS ============ -->
+  <section class="destinations" id="destinations">
+    <div class="container">
+      <div class="destinations-head reveal">
+        <div class="section-head">
+          <p class="eyebrow">Where to next</p>
+          <h2 class="section-title">Top picks for your next adventure</h2>
+          <p class="section-sub">Hand-picked destinations for every kind of traveler.</p>
+        </div>
+      </div>
+
+      <div class="dest-grid reveal" id="destGrid" aria-live="polite">
+        <div class="dest-skeleton"></div>
+        <div class="dest-skeleton"></div>
+        <div class="dest-skeleton"></div>
+        <div class="dest-skeleton"></div>
+      </div>
+
+      <div class="view-all-wrap reveal">
+        <a href="/destinations.html" class="btn btn-gold">
+          View all destinations
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY US ============ -->
+  <section class="why-us" id="why-us">
+    <div class="container">
+      <div class="section-head center reveal">
+        <p class="eyebrow">Why Wanderly</p>
+        <h2 class="section-title">Here's what sets us apart</h2>
+      </div>
+
+      <div class="why-grid reveal">
+        <div class="why-item">
+          <span class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="m14.5 9.5-2 5-5 2 2-5 5-2z"/></svg></span>
+          <h3>Tailor-made trips</h3>
+          <p>Personalized routes based on your style and pace.</p>
+        </div>
+        <div class="why-item">
+          <span class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+          <h3>24/7 support</h3>
+          <p>Always here, wherever you are in the world.</p>
+        </div>
+        <div class="why-item">
+          <span class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13 13 0 0 1 0 18 13 13 0 0 1 0-18z"/></svg></span>
+          <h3>Local experiences</h3>
+          <p>Travel deeper with vetted, on-the-ground guides.</p>
+        </div>
+        <div class="why-item">
+          <span class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>
+          <h3>Secure booking</h3>
+          <p>Trusted payments and a worry-free process.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-copy reveal">
+        <p class="eyebrow">Get in touch</p>
+        <h2>Say <em>hello</em> to us</h2>
+        <p>We'd love to hear about the trip you're dreaming up. Send a message and a travel designer will reply within one business day.</p>
+        <ul class="contact-points">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> hello@wanderly.com</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +123 456 789</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13 13 0 0 1 0 18 13 13 0 0 1 0-18z"/></svg> Trips worldwide, based globally</li>
+        </ul>
+      </div>
+
+      <form class="contact-card reveal" id="contactForm" novalidate>
+        <div class="field" data-field="full_name">
+          <label for="cf-name">Full name</label>
+          <div class="input-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
+            <input id="cf-name" name="full_name" type="text" placeholder="Your name" autocomplete="name" required>
+          </div>
+          <p class="error-msg">Enter your full name.</p>
+        </div>
+        <div class="field" data-field="email">
+          <label for="cf-email">Email</label>
+          <div class="input-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <input id="cf-email" name="email" type="email" placeholder="name@email.com" autocomplete="email" required>
+          </div>
+          <p class="error-msg">Enter a valid email address.</p>
+        </div>
+        <div class="field" data-field="message">
+          <label for="cf-message">Message</label>
+          <div class="input-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="top:18px;transform:none;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            <textarea id="cf-message" name="message" placeholder="Tell us about the trip you're imagining..." required></textarea>
+          </div>
+          <p class="error-msg">Say a little more — at least 5 characters.</p>
+        </div>
+        <button type="submit" class="btn btn-gold btn-block">
+          Send message
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg>
+        </button>
+        <p class="form-note" id="contactNote" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="testimonials" id="reviews">
+    <div class="container">
+      <div class="section-head center reveal">
+        <p class="eyebrow">Traveler stories</p>
+        <h2 class="section-title">What our travelers say</h2>
+      </div>
+
+      <div class="testi-track-wrap reveal">
+        <div class="testi-track" id="testiTrack">
+          <!-- injected by main.js -->
+        </div>
+      </div>
+
+      <div class="testi-nav">
+        <button type="button" class="testi-arrow" id="testiPrev" aria-label="Previous testimonials">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <button type="button" class="testi-arrow" id="testiNext" aria-label="Next testimonials">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="final-cta">
+    <div class="container">
+      <div class="final-cta-inner reveal">
+        <h2>Start your journey today</h2>
+        <p>Your dream trip is just a few clicks away.</p>
+        <button type="button" class="btn btn-gold" data-open-modal>
+          Plan my trip
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <a href="/" class="brand"><img src="/images/logo-white.svg" alt="" width="26" height="26"><span class="brand-word">Wanderly</span></a>
+      <p>Travel the world, your way. Thoughtfully planned trips with real, local expertise behind every itinerary.</p>
+      <div class="footer-social" aria-label="Social media">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick navigation</h4>
+      <ul>
+        <li><a href="#why-us">About</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact info</h4>
+      <ul>
+        <li>hello@wanderly.com</li>
+        <li>+123 456 789</li>
+        <li>Global</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Stay in the loop</h4>
+      <p style="font-size:13.5px;color:rgba(255,255,255,.55);margin-bottom:12px;">Trip ideas and fresh routes, once a month.</p>
+      <form class="newsletter-row" id="newsletterForm">
+        <label for="nl-email" class="sr-only">Email address</label>
+        <input id="nl-email" type="email" name="email" placeholder="name@email.com" required>
+        <button type="submit" class="btn btn-gold" aria-label="Subscribe">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </form>
+      <p class="form-note" id="newsletterNote" role="status" style="text-align:left;"></p>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <span>Travel the world, your way.</span>
+    <span>&copy; <span id="year"></span> Wanderly. All rights reserved.</span>
+  </div>
+</footer>
+
+<!-- ============ PLAN MY TRIP MODAL ============ -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button type="button" class="modal-close" id="modalClose" aria-label="Close dialog">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <h3 id="modalTitle">Plan my trip</h3>
+    <p class="sub">Tell us the shape of the trip — we'll take it from there.</p>
+
+    <form id="tripForm" novalidate style="margin-top:22px;">
+      <div class="field-row">
+        <div class="field" data-field="full_name">
+          <label for="tf-name">Full name</label>
+          <div class="input-wrap"><input id="tf-name" name="full_name" type="text" placeholder="Your name" required style="padding-left:14px;"></div>
+          <p class="error-msg">Enter your full name.</p>
+        </div>
+        <div class="field" data-field="email">
+          <label for="tf-email">Email</label>
+          <div class="input-wrap"><input id="tf-email" name="email" type="email" placeholder="name@email.com" required style="padding-left:14px;"></div>
+          <p class="error-msg">Enter a valid email address.</p>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="tf-destination">Destination</label>
+          <select id="tf-destination" name="destination">
+            <option value="">Not sure yet</option>
+          </select>
+        </div>
+        <div class="field" data-field="travelers">
+          <label for="tf-travelers">Travelers</label>
+          <div class="input-wrap"><input id="tf-travelers" name="travelers" type="number" min="1" max="20" value="2" style="padding-left:14px;"></div>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="tf-date">Ideal start date</label>
+          <div class="input-wrap"><input id="tf-date" name="start_date" type="date" style="padding-left:14px;"></div>
+        </div>
+        <div class="field">
+          <label for="tf-budget">Budget per person</label>
+          <select id="tf-budget" name="budget">
+            <option value="">Flexible</option>
+            <option value="under-1000">Under $1,000</option>
+            <option value="1000-2500">$1,000 – $2,500</option>
+            <option value="2500-5000">$2,500 – $5,000</option>
+            <option value="5000-plus">$5,000+</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="tf-notes">Anything else we should know?</label>
+        <div class="input-wrap"><textarea id="tf-notes" name="notes" placeholder="Occasion, must-sees, pace, anything at all" style="padding-left:14px;"></textarea></div>
+      </div>
+
+      <button type="submit" class="btn btn-gold btn-block">Request my itinerary</button>
+      <p class="form-note" id="tripNote" role="status"></p>
+    </form>
+  </div>
+</div>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

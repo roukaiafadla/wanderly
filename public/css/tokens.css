@@ -1,0 +1,38 @@
+:root {
+  /* --- brand palette (from client brief) --- */
+  --navy: #071739;
+  --navy-soft: #0e2450;
+  --slate: #4b6382;
+  --gold: #a68868;
+  --gold-light: #c7ac89;
+  --mist: #cdd5db;
+
+  /* --- neutrals derived for a full range --- */
+  --paper: #fbfaf8;
+  --off-white: #f4f5f6;
+  --ink: #101825;
+  --ink-soft: rgba(16, 24, 37, 0.68);
+  --line: rgba(7, 23, 57, 0.1);
+  --line-strong: rgba(7, 23, 57, 0.18);
+  --white: #ffffff;
+
+  /* --- type --- */
+  --font-display: "Fraunces", "Playfair Display", "Iowan Old Style", Georgia, serif;
+  --font-body: "General Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* --- layout --- */
+  --container: 1240px;
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 28px;
+  --shadow-card: 0 1px 2px rgba(7, 23, 57, 0.04), 0 12px 32px -16px rgba(7, 23, 57, 0.22);
+  --shadow-float: 0 20px 60px -20px rgba(7, 23, 57, 0.45);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 180ms;
+  --dur-base: 420ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root { color-scheme: light; }
+}

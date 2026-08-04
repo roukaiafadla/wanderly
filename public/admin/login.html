@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login — Wanderly</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/images/logo.png">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body>
+  <div class="login-shell">
+    <div class="login-card">
+      <img src="/images/logo.svg" alt="Wanderly">
+      <h1>Admin sign in</h1>
+      <p class="sub">Manage destinations, testimonials, and leads.</p>
+
+      <form id="loginForm" novalidate>
+        <div class="field" data-field="username">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" autocomplete="username" required>
+          <span class="error-msg"></span>
+        </div>
+        <div class="field" data-field="password">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" autocomplete="current-password" required>
+          <span class="error-msg"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+        <p class="form-note" id="loginNote"></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="/admin/js/admin-login.js"></script>
+</body>
+</html>

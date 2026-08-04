@@ -1,0 +1,16 @@
+{
+  "name": "wanderly",
+  "version": "1.0.0",
+  "description": "Wanderly — travel agency website. Node.js backend (zero external deps) + vanilla HTML/CSS/JS frontend.",
+  "type": "commonjs",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "seed": "node server/seed.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "license": "MIT"
+}
