@@ -1,3 +1,4 @@
+<img width="666" height="290" alt="Group 437" src="https://github.com/user-attachments/assets/7b787681-f786-45c6-9e22-12ac520ed1a7" />
 # Wanderly
 
 A full-stack travel agency website — landing page, destinations directory, contact
