@@ -1,5 +1,6 @@
 
-# Wanderly
+# Wanderly 
+**[Live demo →](https://wanderly-wfy4.onrender.com)** · **[Brand identity on Behance →](https://www.behance.net/gallery/228953887/Wanderly-Travel-Brand-Identity-Visual-System-Design)**
 <img alt="Group 579" src="https://github.com/user-attachments/assets/add601dc-bd4e-4374-a0c0-cfea498e2a29" style="width: 100%; height: auto;" />
 
 A full-stack travel agency website — landing page, destinations directory, contact
