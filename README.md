@@ -1,5 +1,6 @@
-<img width="666" height="290" alt="Group 437" src="https://github.com/user-attachments/assets/7b787681-f786-45c6-9e22-12ac520ed1a7" />
+
 # Wanderly
+<img  alt="Group 579" src="https://github.com/user-attachments/assets/add601dc-bd4e-4374-a0c0-cfea498e2a29" style="width: 100%; height: auto; />
 
 A full-stack travel agency website — landing page, destinations directory, contact
 and trip-request forms, an admin dashboard, and image uploads, all backed by a real
