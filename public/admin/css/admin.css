@@ -263,3 +263,37 @@ select.status-select {
   .main { padding: 24px 18px 60px; }
   .field-row { grid-template-columns: 1fr; }
 }
+
+/* ---------- image upload field ---------- */
+.image-field { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.image-preview {
+  width: 64px; height: 64px; object-fit: cover; border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.08); background: #f3f1ea; flex-shrink: 0;
+}
+.image-field input[type="file"] { font-size: 13px; max-width: 100%; }
+.form-hint { flex-basis: 100%; font-size: 12px; color: #7a7566; margin: 2px 0 0; }
+.form-hint.error { color: #b5423a; }
+
+/* ---------- activity feed (overview) ---------- */
+.activity-feed { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.activity-feed li {
+  display: flex; align-items: baseline; gap: 10px; padding: 10px 4px;
+  border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 13.5px;
+}
+.activity-feed li:last-child { border-bottom: none; }
+.activity-badge {
+  flex-shrink: 0; font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .03em; padding: 2px 7px; border-radius: 20px; color: #fff;
+}
+.activity-badge.contact { background: #3b5a78; }
+.activity-badge.trip { background: #b08a4e; }
+.activity-badge.newsletter { background: #2e7d5b; }
+.activity-summary { flex: 1; }
+.activity-time { color: #9a9484; font-size: 12px; flex-shrink: 0; }
+
+/* ---------- table search ---------- */
+.table-search {
+  padding: 9px 12px; border: 1px solid rgba(0,0,0,0.12); border-radius: 8px;
+  font-size: 13.5px; min-width: 220px; background: #fff;
+}
+.table-search:focus { outline: none; border-color: #b08a4e; }

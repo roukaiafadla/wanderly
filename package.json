@@ -1,16 +1,22 @@
 {
   "name": "wanderly",
   "version": "1.0.0",
-  "description": "Wanderly — travel agency website. Node.js backend (zero external deps) + vanilla HTML/CSS/JS frontend.",
+  "description": "Wanderly — travel agency website. Node.js backend (one dependency: libSQL) + vanilla HTML/CSS/JS frontend.",
   "type": "commonjs",
   "main": "server/index.js",
   "scripts": {
-    "start": "node server/index.js",
-    "dev": "node --watch server/index.js",
-    "seed": "node server/seed.js"
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "dev": "node --env-file-if-exists=.env --watch server/index.js",
+    "migrate": "node --env-file-if-exists=.env server/db/migrate.js",
+    "seed": "node --env-file-if-exists=.env server/seed.js",
+    "create-admin": "node --env-file-if-exists=.env server/create-admin.js",
+    "test": "node --env-file-if-exists=.env.test --test"
   },
   "engines": {
-    "node": ">=22.5.0"
+    "node": ">=20.6.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@libsql/client": "^0.18.0"
+  }
 }

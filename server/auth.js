@@ -1,9 +1,10 @@
 'use strict';
 
 const crypto = require('node:crypto');
+const config = require('./config/env');
 
 const SESSION_COOKIE = 'wanderly_admin_sid';
-const SESSION_TTL_MS = 12 * 60 * 60 * 1000; // 12h idle-ish TTL (renewed on login only)
+const SESSION_TTL_MS = config.sessionTtlMs; // 12h idle-ish TTL by default (renewed on login only)
 
 // In-memory session store — fine for a single-process admin panel.
 // Restarting the server logs everyone out; that's an accepted trade-off

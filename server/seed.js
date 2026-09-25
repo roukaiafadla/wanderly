@@ -1,6 +1,7 @@
 'use strict';
 
-const db = require('./db');
+const migrate = require('./db/migrate');
+const { query } = require('./db/query');
 
 const destinations = [
   {
@@ -136,38 +137,41 @@ const testimonials = [
   }
 ];
 
-const insertDestination = db.prepare(`
-  INSERT INTO destinations (slug, name, country, price_from, rating, review_count, tags, image, blurb, featured, sort_order)
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-  ON CONFLICT(slug) DO UPDATE SET
-    name=excluded.name, country=excluded.country, price_from=excluded.price_from,
-    rating=excluded.rating, review_count=excluded.review_count, tags=excluded.tags,
-    image=excluded.image, blurb=excluded.blurb, featured=excluded.featured, sort_order=excluded.sort_order
-`);
+async function seed() {
+  await migrate();
 
-const insertTestimonial = db.prepare(`
-  INSERT INTO testimonials (name, quote, avatar, trip, rating, sort_order)
-  VALUES (?, ?, ?, ?, ?, ?)
-`);
-
-db.exec('BEGIN');
-try {
   for (const d of destinations) {
-    insertDestination.run(
+    await query(`
+      INSERT INTO destinations (slug, name, country, price_from, rating, review_count, tags, image, blurb, featured, sort_order)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      ON CONFLICT(slug) DO UPDATE SET
+        name=excluded.name, country=excluded.country, price_from=excluded.price_from,
+        rating=excluded.rating, review_count=excluded.review_count, tags=excluded.tags,
+        image=excluded.image, blurb=excluded.blurb, featured=excluded.featured, sort_order=excluded.sort_order
+    `).run(
       d.slug, d.name, d.country, d.price_from, d.rating, d.review_count,
       JSON.stringify(d.tags), d.image, d.blurb, d.featured, d.sort_order
     );
   }
 
-  const existingTestimonials = db.prepare('SELECT COUNT(*) AS c FROM testimonials').get();
+  const existingTestimonials = await query('SELECT COUNT(*) AS c FROM testimonials').get();
   if (existingTestimonials.c === 0) {
     for (const t of testimonials) {
-      insertTestimonial.run(t.name, t.quote, t.avatar, t.trip, t.rating, t.sort_order);
+      await query('INSERT INTO testimonials (name, quote, avatar, trip, rating, sort_order) VALUES (?, ?, ?, ?, ?, ?)')
+        .run(t.name, t.quote, t.avatar, t.trip, t.rating, t.sort_order);
     }
   }
-  db.exec('COMMIT');
+
   console.log(`Seeded ${destinations.length} destinations and testimonials.`);
-} catch (err) {
-  db.exec('ROLLBACK');
-  throw err;
 }
+
+if (require.main === module) {
+  seed()
+    .then(() => process.exit(0))
+    .catch((err) => {
+      console.error('Seed failed:', err.message);
+      process.exit(1);
+    });
+}
+
+module.exports = seed;
