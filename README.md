@@ -9,6 +9,8 @@
   <a href="https://www.behance.net/gallery/228953887/Wanderly-Travel-Brand-Identity-Visual-System-Design">Brand identity on Behance →</a>
 </p>
 
+[![Tests](https://github.com/roukaiafadla/wanderly/actions/workflows/test.yml/badge.svg)](https://github.com/roukaiafadla/wanderly/actions/workflows/test.yml)
+
 A full-stack travel agency website — landing page, destinations directory, contact
 and trip-request forms, an admin dashboard, and image uploads, all backed by a real
 database.
