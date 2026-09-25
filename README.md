@@ -1,9 +1,13 @@
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e8f146b6-cf1f-4d29-8614-69444b1d3753" width="96" alt="Wanderly logo" />
+</p>
 
-# Wanderly <img width="385" height="385" alt="Group 591" src="https://github.com/user-attachments/assets/e8f146b6-cf1f-4d29-8614-69444b1d3753" />
+<h1 align="center">Wanderly</h1>
 
-**[Live demo →](https://wanderly-wfy4.onrender.com)** · **[Brand identity on Behance →](https://www.behance.net/gallery/228953887/Wanderly-Travel-Brand-Identity-Visual-System-Design)**
-
-
+<p align="center">
+  <a href="https://wanderly-wfy4.onrender.com">Live demo →</a> ·
+  <a href="https://www.behance.net/gallery/228953887/Wanderly-Travel-Brand-Identity-Visual-System-Design">Brand identity on Behance →</a>
+</p>
 
 A full-stack travel agency website — landing page, destinations directory, contact
 and trip-request forms, an admin dashboard, and image uploads, all backed by a real
@@ -12,6 +16,7 @@ database.
 Built from your design (colors, layout, copy) and extended with a working backend,
 a full destinations page, a "Plan my trip" flow, a newsletter signup, and an admin
 panel to manage all of it.
+
 
 ## Stack
 
