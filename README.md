@@ -15,9 +15,7 @@ A full-stack travel agency website — landing page, destinations directory, con
 and trip-request forms, an admin dashboard, and image uploads, all backed by a real
 database.
 
-Built from your design (colors, layout, copy) and extended with a working backend,
-a full destinations page, a "Plan my trip" flow, a newsletter signup, and an admin
-panel to manage all of it.
+Designed by me (brand identity on Behance) and built with a custom backend, a destinations directory, a "Plan my trip" flow, a newsletter signup, and an admin dashboard to manage all content.
 
 
 ## Stack
